@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="refresh" content="50;url=" />
+		<script src="js/js1.js"></script>
+		<title>Day 8</title>
+		<script>
+			function f3()
+			{
+				var d=new Date();
+				var t=d.getHours;
+				if(t>=5&&t<=10)document.write("Good morning!");
+				else if(t>10&&t<=13)document.write("Good nool!");
+				else if(t>13&&t<=19)document.write("Good afternool!");
+				else document.write("Good evening!");
+			}
+			f3();
+			function f1()
+			{
+				alert("How are you?")
+			}
+		</script>
+		<script>
+			function f4()
+			{
+				var d=new Date();
+				var t=d.getHours;
+				if(t>=5&&t<=10)document.getElementById("demo").innerHTML="Good morning";
+				else if(t>10&&t<=13)document.getElementById("demo").innerHTML="Good nool";
+				else if(t>13&&t<=19)document.getElementById("demo").innerHTML="Good afternool";
+				else document.getElementById("demo").innerHTML="Good evening";
+			}
+			function f2()
+			{
+				var a=305361501,b="Hello&nbsp;&nbsp;&nbsp;&nbsp;",c="";
+				a=a+"@qq.com"
+				c=b+a;
+				document.write(b+"school"+"</br>"+c)
+			}
+		</script>
+		<link type="text/css" href="css/css.css" rel="stylesheet" />
+	</head>
+	<body>
+		<h1>The 8th day of my prectice</h1>
+		<script>document.write("<strong>Content</strong>")</script>
+		<p>js有三种引入方法，外部js，内部js，元素js。与css类似。</p>
+		<p>外部js和内部js都由script标签引入，但外部js只能写在头部，且外部js的script标签应这么写：“script src="..."”。</br>元素
+		js指在元素写js语句或调用函数</p>
+		<input type="button" value="button 1" onclick="alert('Hello world!')" />
+		<input type="button" value="button 2" onclick="f1()" />
+		</hr>
+		<p>变量的命名</br>变量由字母，数字，$，下划线组成，开头不能是数字，变量不能是系统关键字（系统已经使用）和保留字（系统将来可能使用）。
+		</p>
+		<p>声明</br>javascript中所有变量的声明都用var(如果声明时不对其赋值，则值为“undefined”，如果赋null值则不分配内存空间)</p>
+		<p>比较运算返回值是true，false</p>
+		<p>转义字符</br>Number(将由数字组成的字符串转为数字格式),
+			parseint（从左到右提取数字转为数字格式，注：识别到第一个数字开始提取到第一个非数字终止，数字的正负号也提取）,<br/>
+			parsefloat（从左到右提取数字转为数字格式，注：识别到第一个数字开始提取到第一个非数字和小数点终止，数字的正负号也提取）,<br/>
+			toSring（将数字转为字符串格式，注：还可以通过数字加上一个空字符串来实现）</p>
+		<input type="button" value="here" onclick="f2()" />
+		<p>document.write()中括号内可以包括标签，用"<>"(这时看作字符串)的形式插入标签;以""的形式输出字符串，以变量名输出变量;使用+可以连接各个输出内容
+		，按字符串+数字=字符串，数字+数字=数字，字符串+字符串=字符串的方法，从左往右进行。<br/>如：</p>
+		<script>
+			var x=1,y=2;
+			document.write(x+y+"Hello world!"+"<br/>"+x+y+"<br/>"+"<a href='http://www.baidu.com'><p>js</p></a>");
+		</script>
+		<hr />
+		<p>函数<br/>函数用function定义，有直接调用（如直接写f1(......)；），
+			表达式调用（在加减乘除赋值中调用），
+			超链接调用（在a标签中用href="javascript:函数名"来调用），
+			事件调用（通过各种事件来调用函数）四种调用方法。</p>
+			<p>js中函数可以镶嵌定义，但内部定义的函数只能在内部使用</p>
+		<h1><strong>字符串对象</strong></h1>
+		<p>length属性<br/>调用对象属性时用具体对象名.属性名来调用，返回值是数字格式</p>
+		<p>对象方法<br/>调用对象方法是用具体对象名.方法名（）来调用,大部分返回值是字符串格式；字符串对象的方法有：
+		1.toLowerCase(),toUpperCase()将大写字符串转换为小写或将小写字符串转换为大写;<br/>
+		2.chatAt(n)得到第n+1个字符;<br/>
+		3.substring(start,end)截取在[start,end)区间内的字符串；如果不写，end则一直截到字符串结束;<br/>
+		4.replace("","")(原字符串或它的一部分字符串，替换用字符串)可以用replace来替换字符串的一部分，可用正则表达式来写逗号前部分（用字符串形式时
+		只会替换第一符合条件的部分）;<br/>
+		5.split("分割符")，分割符可以是一个字符或多个字符或一个正则表达式（返回值是<strong>数组</strong>中），如果用""则分割每一个字符;<br/>
+		6.indexOf("指定字符串")检索指定字符串（首字符）在原字符串中首次出现的位置（数字格式），如果发生错误返回-1，
+		inlastIndexOf("指定字符串")检索指定字符串（最后一个字符）在原字符串中首次出现的位置</p>
+		<p>正则表达式</p>
+		<p>正则表达式以/.../的形式,可以赋值给变量来操作；g表示全局搜索//内的内容为检索的内容（正则默认搜索到一个后停止），+表示内容出现一次或多次如:<br/>
+		var str='abcdaadaefaa'<br/>
+		var newstr=str.match(/a+/g)<br/>这时newstr=a,aa,a,aa.正则表达式是区分大小写的但可以通过//i来关闭这个行为,用（）来进行整体操作否则从左往右
+		进行,[]表示匹配其中任意一项，{n}表示重复n次，[^...]匹配直到...<br />
+		<script>
+			var str="2017-8-12--2020";
+			var method_1=/\d+-+/g;
+			var method_2=/(\d+-)+/g;
+			var array1=str.match(method_1);
+			var array2=str.match(method_2);
+            document.write(array2+"<br/>"+array1+"<br/>");
+		</script>
+		<img alt="zzbds1" title="zzbds1" src="img/zzbds1.jpg" /><img alt="zzbds2" title="zzbds2" src="img/zzbds2.jpg" />
+		</p>
+        <p><script>var $1="Hello Lvye";document.write($1.replace(/e/g,""));</script></p>
+        <h1>数组对象</h1>
+        <p>数组可以储存同一类别的数据，用var ...=[lll,ababab,lalala,hahaha]（这是简写版，完全版：var ...=new array(lll,lalala,ababab,hahaha)）
+                的形式来创建一个数组，通过下标来给数组赋值或增加一项：<br/>var a=[a,b,c,d];<br/>a[2]="e";<br/>a[3]="f";</p>
+        <p>数组具有length属性，数组方法：<br/>
+        	1.slice(start,end);截取[start,end）<br/>
+        	2.unshift(新元素1，新元素2，新元素3)在数组开头添加元素;<br/>
+        	3.push(新元素1，新元素2，新元素3)在数组结尾添加元素;<br/>
+        	4.shift()删除开头一个元素;<br/>
+        	5.pop()删除结尾一个元素;<br/>
+        	6.sort(up/down)对数组中元素进行比大小并按大小排序;<br/>
+        	7.reverse()使数组中的元素反向排序;<br/>
+        	8.join("")定义数组中元素的连接符（默认为，）;
+        </p>
+        <p>像var a=str.<u>split("")</u>.<u>join(",")</u>一样通过方法返回值种类再使用方法可以减短代码长度</p>
+        <h1>时间对象</h1>
+        <div id="demo"></div>
+        <p>使用Date（）来创建一个时间对象，</p><input type="button" value="onclick" onclick="f4()" />
+	</body>
+</html>
