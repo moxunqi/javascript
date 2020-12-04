@@ -38,15 +38,53 @@
 			   var ob2=document.getElementById("obu");
 			    var ob=ob0.getElementsByTagName("ol");
 			     var ob1=ob[0];
+			     var ov1=document.getElementById("b");
+			     ov1.focus();
+			     ov1.onfocus=function()
+			     {
+			     	if(ov1.value=="HTML")ov1.value="";
+			     };
+			     ov1.onblur=function()
+			     {
+			     	if(ov1.value=="")ov1.value="HTML";
+			     };
+			     ov1.onclick=function()
+			     {
+			     	ov1.select();
+			     };
 			    ob2.onclick=function()
 			    {		
-				    var ov1=document.getElementById("b");
 				    var txt=document.createTextNode(ov1.value);
 				    var oli=document.createElement("li");
 				    oli.appendChild(txt);
 				    ob1.appendChild(oli);
 			    }
-
+			    var ocheckbox=document.getElementsByName("langwagetype");
+			    var i=0;
+			    var odiv=document.getElementById("div1");
+			    var n=ocheckbox.length;
+			    for(i=0;i<=n-1;i++)
+			    {
+			    	ocheckbox[i].onchange=function()
+			    	{
+			    		if(this.checked)
+			    		{
+			    			odiv.innerHTML="你选择了 "+this.value;
+			    		}
+			    	};
+			    }
+               document.body.oncopy=function()
+                {
+	                        return false;
+                };
+                document.body.onselectstart=function()
+                {
+	                        return false;
+                };
+                document.body.oncontextmenu=function()
+                {
+	                        return false;
+                };
 			}
 			var z=0;
 			function f4()
@@ -68,3 +106,7 @@
 				    else {oli[i].style.color="paleturquoise";z++;}
 				}
 			}
+window.onbeforeunload=function(e)
+{
+	e.returnValue="wellcome to use it next time";
+};

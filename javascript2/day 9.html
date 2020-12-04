@@ -44,13 +44,37 @@
 	    <p>对元素的属性的操作有两种方式，一是通过“对象属性”(obj.attr)，另一种是通过“对象方法”</p>
 	    <p>元素属性的对象方法(与obj.atrr不同的是它还可以获取自定义的属性的属性值)<br />getAttribute("属性名"),setAtrribut("属性名"，"属性值"),removeAttribute("属性名"),
 	    hasAttribute("属性值")可以用这种方法来判断元素是否有这种属性值（返回值是bool）</p>
-	    <h2>css属性操作</h2>
-	    <p>getComputedStyle(obj).attr可以得到obj元素的attr属性值，obj.style.attr="属性值"这种写发可以得到<u>行内样式</u>的属性并更改，obj.style.cssText="attr:属性值;attr:属性值;"
-	    可以用style对象的cssText属性来对obj元素同时设置多个属性(这里的属性名用-连接，不用大写字母的方式)，实际开发中一般用class结合内部样式表来整体控制属性</p>
+	    <h2>css属性操作(即用style控制的属性)</h2>
+	    <p>getComputedStyle(obj).attr可以得到obj元素的attr属性值，obj.style.attr（也可以写成style[attr]）="属性值"这种写法<u>只</u>可以得到<u>行内样式</u>的属性并更改，obj.style.cssText="attr:属性值;attr:属性值;"
+	    可以用style对象的cssText属性来对obj元素同时设置多个属性(这里的属性名用-连接，不用大写字母的方式)，实际开发中一般用class结合内部/外部样式表来整体控制属性</p>
 	    <h1>DOM遍历（通过obj的各种属性查找其父，子，兄弟对象）（这里的obj只能是由getElementById（），getElementsByClassName（），getElementsByName（），
 	    	getElementsByTagName（）的方法获得的元素）</h1>
 	    <p id="p2">parentNode<br />
-	    childNodes,firstChild,lastChild  ; children,firstElementChild,lastElementChild<br />
+	    childNodes,firstChild,lastChild  ;  children,firstElementChild,lastElementChild<br />
 	    previousSibling,nexSibling  ;  previousElementSibling,nextElementSibling<br />分号前部分为或取所有节点（标签内所有部分包括换行符），后部分为获取元素节点</p>
-	</body>
+                                                                                                                               <!--
+                                                                                                                               	作者：3053615901@qq.com
+                                                                                                                               	时间：2020-12-02
+                                                                                                                               	描述：字符串/字符/HTML标签（因为HTML标签本身就是字符串）在方法括号中/输入输出计算等号后/一般要加""；DOM对象不用加""。
+                                                                                                                               -->
+        <h1>innerHTML,innerText属性</h1>
+        <p>使用这两种属性可以方便地在一个元素中插入或获取一个内部元素/内部文本，字符串中可以使用\来换行写。</p>
+        <hr />
+        <h1>事件</h1>
+        <p>事件调用<br />在script标签中调用，通过obj.事件属性=function(){}；来调用（；可以加）<br />在元素中调用事件，通过 事件属性=函数名() 来调用事件</p>
+        <h2>鼠标事件</h2>
+        <p>onclick,onmouseover,onmouseout,onmousedown,onmouseup,onmouseout</p>
+        <h2>键盘事件</h2>
+        <p>onkeydown,onkeyup</p>
+        <h2>表单事件</h2>
+        <p>onfocus(获取焦点事件属性)(focus()方法可以使表单自动被选中),onblur(失去焦点事件属性),onselect(选中文本框内的内容的事件属性)(select()方法用于自动全选文本框内容),
+        onchange(具有多个选项的表单元素被选中的事件属性)</p>
+        <label><input type="checkbox" name="langwagetype"  value="HTML"/>HTML</label>
+        <label><input type="checkbox" name="langwagetype"  value="JavaScript" />JavaScript</label>
+        <label><input type="checkbox" name="langwagetype"  value="CSS"/>CSS</label>
+        <label><input type="checkbox" name="langwagetype"  value="jQuery" />jQuery</label>
+        <label><input type="checkbox" name="langwagetype"  value="HTML5" />HTML5</label>
+        <label><input type="checkbox" name="langwagetype"  value="CSS3" />CSS3</label>
+        <div id="div1"></div>
+        </body>
 </html>
